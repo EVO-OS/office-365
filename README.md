@@ -15,6 +15,16 @@ Welcome to the Office Suite for Linux, an advanced, Electron and React-based des
 
 To install the Office Suite on your Linux system, download the latest release from the GitHub repository and follow the instructions provided in the installation guide.
 
+### Cloning the Repository
+
+To clone the repository and work on it locally, run the following command:
+
+```bash
+git clone https://github.com/VishwamAI/office-365.git
+```
+
+Navigate to the cloned directory before proceeding with the installation steps.
+
 ## Running the Application
 
 Navigate to the application directory and run the following command:
