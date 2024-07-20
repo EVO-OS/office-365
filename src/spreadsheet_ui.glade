@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="main_window">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Advanced Spreadsheet</property>
+    <property name="default_width">1024</property>
+    <property name="default_height">768</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkMenuBar" id="menubar">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_File</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <child>
+                      <object class="GtkMenuItem" id="new_sheet_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">New Sheet</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="open_sheet_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Open Sheet</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="save_sheet_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Save Sheet</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem"/>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="import_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Import...</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="export_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Export...</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem"/>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="quit_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Quit</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Edit</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_View</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_AI</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <child>
+                      <object class="GtkMenuItem" id="analyze_data_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Analyze Data</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="predict_values_menu_item">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Predict Values</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToolbar" id="toolbar">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkToolButton" id="new_sheet_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">New</property>
+                <property name="icon_name">document-new</property>
+                <property name="tooltip_text" translatable="yes">New Sheet</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="open_sheet_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Open</property>
+                <property name="icon_name">document-open</property>
+                <property name="tooltip_text" translatable="yes">Open Sheet</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="save_sheet_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Save</property>
+                <property name="icon_name">document-save</property>
+                <property name="tooltip_text" translatable="yes">Save Sheet</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparatorToolItem"/>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="import_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Import</property>
+                <property name="icon_name">document-import</property>
+                <property name="tooltip_text" translatable="yes">Import from Google Sheets or Excel</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="export_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Export</property>
+                <property name="icon_name">document-export</property>
+                <property name="tooltip_text" translatable="yes">Export to Google Sheets or Excel</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparatorToolItem"/>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="analyze_data_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Analyze</property>
+                <property name="icon_name">system-run</property>
+                <property name="tooltip_text" translatable="yes">Analyze Data (AI)</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="predict_values_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Predict</property>
+                <property name="icon_name">system-search</property>
+                <property name="tooltip_text" translatable="yes">Predict Values (AI)</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="content_box">
+            <property name="visible">True</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkEntry" id="formula_bar">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Enter formula</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="spreadsheet_scroll">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <child>
+                  <object class="GtkTreeView" id="spreadsheet_grid">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="enable_grid_lines">both</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection"/>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="statusbar">
+            <property name="visible">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

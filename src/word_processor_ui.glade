@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <requires lib="gtksourceview" version="4.0"/>
+  <object class="GtkWindow" id="main_window">
+    <property name="title">Word Processor</property>
+    <property name="default-width">1024</property>
+    <property name="default-height">768</property>
+    <property name="background">#FFFFFF</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar" id="header_bar">
+            <property name="visible">True</property>
+            <property name="show-close-button">True</property>
+            <property name="background">#F1F3F4</property>
+            <child>
+              <object class="GtkButton" id="new_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Create a new document</property>
+                <property name="image">new_icon</property>
+                <property name="relief">none</property>
+                <style>
+                  <class name="image-button"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="open_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Open an existing document</property>
+                <property name="image">open_icon</property>
+                <property name="relief">none</property>
+                <style>
+                  <class name="image-button"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="save_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Save document</property>
+                <property name="image">save_icon</property>
+                <property name="relief">none</property>
+                <style>
+                  <class name="image-button"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="share_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Share document</property>
+                <property name="image">share_icon</property>
+                <property name="relief">none</property>
+                <style>
+                  <class name="image-button"/>
+                </style>
+              </object>
+            </child>
+            <child type="title">
+              <object class="GtkEntry" id="document_title">
+                <property name="visible">True</property>
+                <property name="placeholder-text">Untitled document</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="ai_assist_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Get AI assistance</property>
+                <property name="image">ai_icon</property>
+                <property name="relief">none</property>
+                <style>
+                  <class name="suggested-action"/>
+                  <class name="image-button"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="toolbar">
+            <property name="visible">True</property>
+            <property name="orientation">horizontal</property>
+            <property name="spacing">6</property>
+            <property name="margin">6</property>
+            <child>
+              <object class="GtkButton" id="undo_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Undo</property>
+                <property name="image">undo_icon</property>
+                <property name="relief">none</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="redo_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Redo</property>
+                <property name="image">redo_icon</property>
+                <property name="relief">none</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="font_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Font</property>
+                <property name="label">Roboto</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="font_size_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Font size</property>
+                <property name="label">11</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="bold_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Bold</property>
+                <property name="image">bold_icon</property>
+                <property name="relief">none</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="italic_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Italic</property>
+                <property name="image">italic_icon</property>
+                <property name="relief">none</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="underline_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Underline</property>
+                <property name="image">underline_icon</property>
+                <property name="relief">none</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="text_color_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Text color</property>
+                <property name="image">text_color_icon</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="highlight_color_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Highlight color</property>
+                <property name="image">highlight_color_icon</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="smart_compose_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Toggle Smart Compose</property>
+                <property name="image">smart_compose_icon</property>
+                <property name="relief">none</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="research_button">
+                <property name="visible">True</property>
+                <property name="tooltip-text">Open Research Panel</property>
+                <property name="image">research_icon</property>
+                <property name="relief">none</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkPaned" id="main_paned">
+            <property name="orientation">horizontal</property>
+            <child>
+              <object class="GtkNotebook" id="document_notebook">
+                <property name="scrollable">True</property>
+                <property name="show-border">False</property>
+                <child>
+                  <object class="GtkScrolledWindow">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <child>
+                      <object class="GtkSourceView" id="source_view">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="wrap_mode">word</property>
+                        <property name="show_line_numbers">True</property>
+                        <property name="highlight_current_line">True</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel">
+                    <property name="label">Document 1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="sidebar_box">
+                <property name="orientation">vertical</property>
+                <property name="width-request">250</property>
+                <child>
+                  <object class="GtkStackSwitcher" id="sidebar_switcher">
+                    <property name="visible">True</property>
+                    <property name="stack">sidebar_stack</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkStack" id="sidebar_stack">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkScrolledWindow" id="outline_scroll">
+                        <property name="visible">True</property>
+                        <child>
+                          <object class="GtkTreeView" id="outline_tree">
+                            <property name="visible">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">outline</property>
+                        <property name="title">Outline</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkScrolledWindow" id="ai_suggestions_scroll">
+                        <property name="visible">True</property>
+                        <child>
+                          <object class="GtkListBox" id="ai_suggestions_list">
+                            <property name="visible">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">ai_suggestions</property>
+                        <property name="title">AI Suggestions</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="status_box">
+            <property name="visible">True</property>
+            <property name="orientation">horizontal</property>
+            <property name="spacing">10</property>
+            <property name="margin">5</property>
+            <child>
+              <object class="GtkLabel" id="word_count_label">
+                <property name="visible">True</property>
+                <property name="label">Words: 0</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStatusbar" id="statusbar">
+                <property name="visible">True</property>
+                <property name="margin-top">2</property>
+                <property name="margin-bottom">2</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
+
+

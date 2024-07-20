@@ -1,0 +1,15 @@
+/* Basic CSS rules for the word processor UI */
+.text-area {
+    font-size: 16px;
+    color: #333;
+}
+.button {
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+.button:hover {
+    background-color: #e8e8e8;
+}

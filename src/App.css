@@ -1,0 +1,67 @@
+/* This file contains the CSS for the office suite application, inspired by the WhiteSur-gtk-theme project and Google's design language. */
+:root {
+  --primary-color: #5b9bd5;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+  --button-color: var(--primary-color);
+  --button-text-color: #fff;
+  --button-disabled-color: #ccc;
+  --toolbar-background-color: #e0e0e0;
+  --toolbar-border-color: #ccc;
+  --input-border-color: #ccc;
+}
+
+.word-processor, .presentation-tool, .spreadsheet {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.toolbar {
+  background-color: var(--toolbar-background-color);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--toolbar-border-color);
+}
+
+.text-area, .slide-editor, .grid {
+  border: 1px solid var(--input-border-color);
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.slide-thumbnail {
+  border: 1px solid var(--input-border-color);
+  margin: 5px;
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.slide-thumbnail.active {
+  border-color: var(--primary-color);
+}
+
+input[type="text"], textarea {
+  border: 1px solid var(--input-border-color);
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: var(--button-disabled-color);
+}
+
+/* Additional styles can be added as needed */
